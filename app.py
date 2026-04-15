@@ -8,7 +8,8 @@ import hashlib
 app = Flask(__name__)
 app.secret_key = "hospital_secret_key_2024"
 
-client = Groq(api_key="REMOVED_KEY")
+import os
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 MODEL  = "llama-3.3-70b-versatile"
 
 # ── Database ───────────────────────────────────────
